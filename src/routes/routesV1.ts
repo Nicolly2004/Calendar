@@ -3,13 +3,14 @@ import  express from "express" ;
 
 const routesV1 = express.Router();
 
+//login
+routesV1.post('/login', (req,res) => {
+  res.send("Realiza Login")
+});
+
 //usuarios
 routesV1.post('/users', (req,res) => {
   res.send("Cadastra um usuário")
-});
-
-routesV1.post('/users/login', (req,res) => {
-  res.send("Realiza Login")
 });
 
 routesV1.get("/users", (req,res) => {
