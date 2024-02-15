@@ -3,9 +3,9 @@ Content-Type: application/json
 
 {
     "name": "Nicolly Reis",
-    "email": "nicollyreis@email.com",
-    "nome-Usuario": "NicollyReis",
-    "senha":"123456789",
+    "email": "nicolly543@email.com",
+    "nameUser": "NicollyReis",
+    "senha":"123456789"
 }
 
 ###
@@ -13,8 +13,8 @@ POST http://127.0.0.1:3000/api/v1/users/login HTTP/1.1
 Content-Type: application/json
 
 {
-    "nome-Usuario": "NicollyReis",
-    "senha":"123456789",
+    "nameUser": "NicollyReis",
+    "senha":"123456789"
 }
 
 ###
@@ -23,3 +23,17 @@ GET http://127.0.0.1:3000/api/v1/users HTTP/1.1
 ###
 GET http://127.0.0.1:3000/api/v1/users/1 HTTP/1.1
 ###
+
+###
+PUT http://127.0.0.1:3000/api/v1/users/f5e58de2-23fa-4e7f-8023-ee73d4d1a26a HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Nicolly Souza",
+    "email": "souza@email.com",
+    "nameUser": "NicollySouza",
+    "senha":"123456789"
+}
+
+##
+DELETE http://127.0.0.1:3000/api/v1/1 HTTP/1.1

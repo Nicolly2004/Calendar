@@ -11,7 +11,7 @@ model User {
   id String @id @default(uuid())
   name String
   email String @unique
-  nameUser String
+  nameUser String @unique
   senha String
   events Event[]
   createdAt DateTime @default(now())
@@ -21,11 +21,13 @@ model User {
 
 model Event {
   id String @id @default(uuid())
+  name String
   title String
   content String
   isActive  Boolean @default(false)
   author User @relation(fields: [authorId],references: [id])
   authorId String
+  date DateTime @default(now())
   medias Media[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

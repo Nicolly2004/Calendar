@@ -1,25 +1,12 @@
 import { Router } from "express";
-
+import * as eventController from './../../controllers/EventController'
 const eventRoutes = Router();
 
-eventRoutes.post('/events', (req,res) => {
-    res.send("Cadastra um evento")
-  });
-  
-eventRoutes.get("/events", (req,res) => {
-    res.send("Lista todos os evento")
-  });
-  
-eventRoutes.get("/events/:id", (req,res) => {
-    res.send("Lista evento por id")
-  });
-  
-eventRoutes.put("/events/:id",(req,res) => {
-    res.send("Atualiza evento por id")
-  });
-  
-eventRoutes.delete("/events/:id", (req,res) =>{
-    res.send("Deleta evento por id")
-  });
+eventRoutes.post('/events',eventController.saveEvent)
+eventRoutes.get('events',eventController.getEvents)
+eventRoutes.get('events',eventController.getEvent)
+eventRoutes.put('/events/:id',eventController.getEvent)
+eventRoutes.delete('events/:id',eventController.getEvent)
+
 
 export {eventRoutes};

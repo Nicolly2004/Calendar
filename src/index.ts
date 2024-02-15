@@ -32,7 +32,7 @@ app.use((req: Request,res: Response) => {
         JSON.stringify({
             error: "Not Found",
             message: "Rota não encontrada",
-        })
+         })
     );
 });
 
