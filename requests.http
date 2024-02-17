@@ -2,8 +2,8 @@ POST http://127.0.0.1:3000/api/v1/users HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Nicolly Reis",
-    "email": "nicolly543@email.com",
+   "name": "Nicolly Reis",
+    "email": "nicolly654@email.com",
     "nameUser": "NicollyReis",
     "senha":"123456789"
 }
@@ -21,7 +21,7 @@ Content-Type: application/json
 GET http://127.0.0.1:3000/api/v1/users HTTP/1.1
 
 ###
-GET http://127.0.0.1:3000/api/v1/users/1 HTTP/1.1
+GET http://127.0.0.1:3000/api/v1/users HTTP/1.1
 ###
 
 ###
@@ -37,3 +37,31 @@ Content-Type: application/json
 
 ##
 DELETE http://127.0.0.1:3000/api/v1/1 HTTP/1.1
+
+
+#eventos
+
+###
+POST http://127.0.0.1:3000/api/v1/events HTTP/1.1
+Content-Type: application/json
+
+{
+    "description": "Levar o telefone na assistência técnica para arrumar",
+    "date": "18/04/2025"
+}
+
+GET http://127.0.0.1:3000/api/v1/events HTTP/1.1
+
+###
+GET http://127.0.0.1:3000/api/v1/events/1 HTTP/1.1
+###
+
+###
+PUT http://127.0.0.1:3000/api/v1/events/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Arrumar o celular",
+    "description": "Levar o telefone na assistência técnica para arrumar",
+    "date": "18/04/2025"
+}

@@ -3,18 +3,24 @@ import express, { Express, Request, Response, response } from "express";
 import dotenv from "dotenv";
 import cors from "cors"
 import routesV1 from "./routes/routesV1";
+import { exceptionHandler } from "./middlewares/exceptionHandler";
 
 dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT || 3000;
-
-
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(express.static("public"));
+
+app.use((req,res,next) => {
+    console.log(`[${req.method}] ${req.path}`);
+    next();
+})
+
 app.use(
     cors({
-        origin: ["*"]
+        origin: ["*"],
     })
 );
 app.use('/api/v1',routesV1);
@@ -27,7 +33,9 @@ app.get('/',(req,res) =>{
     );
 })
 
-app.use((req: Request,res: Response) => {
+app.use(exceptionHandler); 
+
+app.use((req,res) => {
     response.status(404).json(
         JSON.stringify({
             error: "Not Found",

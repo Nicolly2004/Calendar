@@ -1,9 +1,9 @@
 import { Router } from "express";
+import { login } from "../../controllers/userController";
 
 const authRoutes = Router();
+//@todo(tudu) criar método de login
 
-authRoutes.post('/login', (req,res) => {
-  res.send("Realiza Login")
-});
-
+authRoutes.post('/login', login);
+ 
 export  {authRoutes};

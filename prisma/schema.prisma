@@ -10,7 +10,7 @@ datasource db {
 model User {
   id String @id @default(uuid())
   name String
-  email String @unique
+  email String 
   nameUser String @unique
   senha String
   events Event[]
@@ -21,13 +21,11 @@ model User {
 
 model Event {
   id String @id @default(uuid())
-  name String
-  title String
-  content String
+  date DateTime @default(now())
+  description String
   isActive  Boolean @default(false)
   author User @relation(fields: [authorId],references: [id])
   authorId String
-  date DateTime @default(now())
   medias Media[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -37,8 +35,8 @@ model Media {
   id String @id @default(uuid())
   name String
   path String
-  event Event @relation(fields: [postId], references: [id])
-  postId String
+  event Event @relation(fields: [eventId], references: [id])
+  eventId String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
